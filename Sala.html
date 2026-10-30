@@ -1,0 +1,594 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Sala Inteligente</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(5,10,20,.65), rgba(5,10,20,.88)),
+        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800")
+        center/cover fixed;
+}
+
+/* CABEÇALHO */
+header {
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #36cfff;
+}
+
+.data-hora {
+    text-align: right;
+    padding: 10px 16px;
+    background: rgba(0,0,0,.55);
+    border: 1px solid #29445e;
+    border-radius: 12px;
+}
+
+#relogio {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#data {
+    color: #36cfff;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* APRESENTAÇÃO */
+.intro {
+    text-align: center;
+    padding: 65px 15px 90px;
+}
+
+.intro small {
+    color: #36cfff;
+    letter-spacing: 3px;
+}
+
+.intro h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    margin: 15px 0;
+}
+
+.intro p {
+    color: #d1dced;
+    font-size: 14px;
+}
+
+/* CONTEÚDO */
+main {
+    max-width: 1050px;
+    margin: -35px auto 0;
+    padding: 20px;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.dispositivos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* CARTÕES */
+.card {
+    background: rgba(8,15,27,.88);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(54,207,255,.35);
+    border-radius: 15px;
+    padding: 22px 15px;
+    text-align: center;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #36cfff;
+}
+
+.icone {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.status {
+    display: block;
+    color: #ff7777;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.status.ligado {
+    color: #4de0ad;
+}
+
+/* BOTÕES */
+button {
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn {
+    background: #147fc0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.btn:hover {
+    background: #20a9ef;
+}
+
+/* TEMPERATURA */
+.temperatura {
+    display: none;
+    color: #36cfff;
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.temperatura small {
+    display: block;
+    color: #aebbd0;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+/* CORES LED */
+.led-cores {
+    margin-top: 20px;
+    padding: 17px;
+    background: rgba(8,15,27,.88);
+    border: 1px solid rgba(54,207,255,.3);
+    border-radius: 14px;
+    text-align: center;
+}
+
+.led-cores h3 {
+    font-size: 13px;
+    margin-bottom: 13px;
+}
+
+.color-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+input[type="color"] {
+    width: 48px;
+    height: 38px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#corNome {
+    color: #36cfff;
+    font-size: 12px;
+}
+
+/* MODOS */
+.modos {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(8,15,27,.88);
+    border: 1px solid rgba(54,207,255,.3);
+    border-radius: 14px;
+}
+
+.modos h3,
+.alexa h3 {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.botoes-modos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.modo {
+    background: rgba(30,110,170,.2);
+    color: white;
+    border: 1px solid #29445e;
+    padding: 14px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.modo:hover {
+    border-color: #36cfff;
+    background: rgba(30,150,220,.3);
+}
+
+/* FUNÇÕES ALEXA */
+.alexa {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(8,15,27,.88);
+    border: 1px solid rgba(54,207,255,.3);
+    border-radius: 14px;
+}
+
+.lista-alexa {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.funcao {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(54,207,255,.15);
+    border-radius: 10px;
+}
+
+.funcao > span {
+    font-size: 24px;
+}
+
+.funcao strong {
+    font-size: 13px;
+}
+
+.funcao p {
+    color: #aebbd0;
+    font-size: 11px;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #aebbd0;
+    font-size: 11px;
+}
+
+/* RESPONSIVIDADE */
+@media(max-width: 750px) {
+    .dispositivos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 450px) {
+    .dispositivos {
+        grid-template-columns: 1fr;
+    }
+
+    .intro {
+        padding: 45px 15px 70px;
+    }
+
+    .botoes-modos {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        SMART <span>LIVING ROOM</span>
+    </div>
+
+    <div class="data-hora">
+        <div id="relogio">00:00:00</div>
+        <div id="data">Carregando data...</div>
+    </div>
+</header>
+
+<section class="intro">
+    <small>CONFORTO • ENTRETENIMENTO • TECNOLOGIA</small>
+
+    <h1>Minha Sala Inteligente</h1>
+
+    <p>Controle seu ambiente em um só lugar.</p>
+</section>
+
+<main>
+
+<h2 class="titulo">MEUS DISPOSITIVOS</h2>
+
+<section class="dispositivos">
+
+    <!-- LED -->
+    <div class="card">
+        <div class="icone">💡</div>
+        <h3>Iluminação LED</h3>
+        <span class="status" id="ledStatus">Desligada</span>
+
+        <button class="btn" onclick="alternar('led')">
+            Ligar / Desligar
+        </button>
+    </div>
+
+    <!-- AR -->
+    <div class="card">
+        <div class="icone">❄️</div>
+        <h3>Ar-condicionado</h3>
+        <span class="status" id="arStatus">Desligado</span>
+
+        <div class="temperatura" id="temperaturaAr">
+            <span id="valorTemperatura">23</span>°C
+            <small>Temperatura configurada</small>
+        </div>
+
+        <button class="btn" onclick="alternar('ar')">
+            Ligar / Desligar
+        </button>
+    </div>
+
+    <!-- TV -->
+    <div class="card">
+        <div class="icone">📺</div>
+        <h3>TV / Monitor</h3>
+        <span class="status" id="tvStatus">Desligada</span>
+
+        <button class="btn" onclick="alternar('tv')">
+            Ligar / Desligar
+        </button>
+    </div>
+
+    <!-- JBL -->
+    <div class="card">
+        <div class="icone">🔊</div>
+        <h3>JBL Boombox</h3>
+        <span class="status" id="jblStatus">Desconectada</span>
+
+        <button class="btn" onclick="alternar('jbl')">
+            Conectar / Desconectar
+        </button>
+    </div>
+
+</section>
+
+<!-- CORES LED -->
+<section class="led-cores">
+    <h3>🎨 PERSONALIZAR ILUMINAÇÃO</h3>
+
+    <div class="color-picker">
+        <input
+            type="color"
+            id="corLED"
+            value="#36cfff"
+            onchange="alterarCor()"
+        >
+
+        <span id="corNome">#36cfff</span>
+    </div>
+</section>
+
+<!-- MODOS DA SALA -->
+<section class="modos">
+    <h3>MODOS DA SALA</h3>
+
+    <div class="botoes-modos">
+
+        <button class="modo" onclick="ativarModo('cinema')">
+            🎬 Cinema
+        </button>
+
+        <button class="modo" onclick="ativarModo('relax')">
+            🌙 Relax
+        </button>
+
+        <button class="modo" onclick="ativarModo('festa')">
+            🎉 Festa
+        </button>
+
+    </div>
+</section>
+
+<!-- LISTA DE FUNÇÕES DA ALEXA -->
+<section class="alexa">
+
+    <h3>🔊 O QUE A ALEXA PODE FAZER?</h3>
+
+    <div class="lista-alexa">
+
+        <div class="funcao">
+            <span>💡</span>
+            <div>
+                <strong>Alexa,Ligar a lâmpada principal ou Alexa,Ligar fita led</strong>
+                <p>Ligar, desligar e mudar as cores da fita LED.</p>
+            </div>
+        </div>
+
+        <div class="funcao">
+            <span>❄️</span>
+            <div>
+                <strong>Alexa,Ligar ar-condicionado</strong>
+                <p>Ligar, desligar e ajustar a temperatura.</p>
+            </div>
+        </div>
+
+        <div class="funcao">
+            <span>📺</span>
+            <div>
+                <strong>Alexa,Ligar TV</strong>
+                <p>Acionar rotinas para a TV e o Mi TV Stick, conforme a integração disponível.</p>
+            </div>
+        </div>
+
+        <div class="funcao">
+            <span>🎬</span>
+            <div>
+                <strong>Alexa,Ativar modo Cinema</strong>
+                <p>Preparar a iluminação e o ar-condicionado para assistir a filmes.</p>
+            </div>
+        </div>
+
+        <div class="funcao">
+            <span>🌙</span>
+            <div>
+                <strong>Alexa,Ativar modo Relaxar</strong>
+                <p>Criar um ambiente com iluminação suave e climatização.</p>
+            </div>
+        </div>
+
+        <div class="funcao">
+            <span>🎉</span>
+            <div>
+                <strong>Alexa,Ativar modo Festa</strong>
+                <p>Acionar a iluminação colorida para momentos de diversão.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    SALA DE ESTAR INTELIGENTE • PROJETO JV
+</footer>
+
+<script>
+
+// ESTADOS DEMONSTRATIVOS
+const equipamentos = {
+    led: false,
+    ar: false,
+    tv: false,
+    jbl: false
+};
+
+const textos = {
+    led: ["Ligada", "Desligada"],
+    ar: ["Ligado", "Desligado"],
+    tv: ["Ligada", "Desligada"],
+    jbl: ["Conectada", "Desconectada"]
+};
+
+// RELÓGIO E DATA
+function atualizarRelogio() {
+    const agora = new Date();
+
+    document.getElementById("relogio").textContent =
+        agora.toLocaleTimeString("pt-BR");
+
+    document.getElementById("data").textContent =
+        agora.toLocaleDateString("pt-BR", {
+            weekday: "long",
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+}
+
+atualizarRelogio();
+setInterval(atualizarRelogio, 1000);
+
+// ATUALIZAR ESTADOS
+function atualizarStatus(nome) {
+    const elemento = document.getElementById(nome + "Status");
+
+    elemento.textContent =
+        equipamentos[nome] ? textos[nome][0] : textos[nome][1];
+
+    elemento.classList.toggle("ligado", equipamentos[nome]);
+}
+
+// LIGAR E DESLIGAR
+function alternar(nome) {
+    equipamentos[nome] = !equipamentos[nome];
+
+    atualizarStatus(nome);
+
+    if (nome === "ar") {
+        document.getElementById("temperaturaAr").style.display =
+            equipamentos.ar ? "block" : "none";
+    }
+}
+
+// COR DA FITA LED
+function alterarCor() {
+    const cor = document.getElementById("corLED").value;
+    document.getElementById("corNome").textContent = cor;
+}
+
+// MODOS DA SALA
+function ativarModo(modo) {
+
+    if (modo === "cinema") {
+        equipamentos.led = true;
+        equipamentos.ar = true;
+        equipamentos.tv = true;
+    }
+
+    if (modo === "relax") {
+        equipamentos.led = true;
+        equipamentos.ar = true;
+        equipamentos.tv = false;
+    }
+
+    if (modo === "festa") {
+        equipamentos.led = true;
+        equipamentos.ar = false;
+        equipamentos.tv = false;
+    }
+
+    Object.keys(equipamentos).forEach(atualizarStatus);
+
+    document.getElementById("temperaturaAr").style.display =
+        equipamentos.ar ? "block" : "none";
+}
+
+</script>
+
+</body>
+</html>

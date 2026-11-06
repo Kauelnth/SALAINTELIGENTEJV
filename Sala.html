@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minha Sala Inteligente</title>
+<title>Sala Inteligente | Programação</title>
 
 <style>
 * {
@@ -40,14 +40,14 @@ header {
 
 .logo span,
 #data {
-  color: #a78bfa;
+  color: #45b8ff;
 }
 
 .data-hora {
   text-align: right;
   padding: 10px 16px;
   background: rgba(17,19,26,.82);
-  border: 1px solid #34313f;
+  border: 1px solid #244761;
   border-radius: 12px;
 }
 
@@ -67,7 +67,7 @@ header {
 }
 
 .intro small {
-  color: #b49aff;
+  color: #70caff;
   letter-spacing: 3px;
   font-size: 10px;
   font-weight: 700;
@@ -78,191 +78,10 @@ header {
   margin: 15px 0;
 }
 
-.intro p {
-  color: #b8bac5;
-  font-size: 14px;
-}
-
 main {
   max-width: 900px;
   margin: -30px auto 0;
   padding: 20px;
-}
-
-.titulo {
-  text-align: center;
-  margin-bottom: 22px;
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #c4b5fd;
-}
-
-.dispositivos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.card {
-  background: linear-gradient(145deg, rgba(22,24,32,.96), rgba(13,15,21,.96));
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(167,139,250,.22);
-  border-radius: 15px;
-  padding: 24px 18px;
-  text-align: center;
-  transition: .3s;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  border-color: #a78bfa;
-  box-shadow: 0 14px 36px rgba(0,0,0,.28);
-}
-
-.icone {
-  font-size: 34px;
-  margin-bottom: 12px;
-}
-
-.card h3 {
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.status {
-  display: block;
-  color: #f28b9a;
-  font-size: 12px;
-  margin: 10px 0;
-}
-
-.status.ligado {
-  color: #7ee0b8;
-}
-
-button {
-  cursor: pointer;
-  transition: .2s;
-}
-
-.btn {
-  background: #6d4cc3;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 11px;
-  width: 100%;
-  font-weight: bold;
-  font-size: 11px;
-}
-
-.btn:hover {
-  background: #8765df;
-}
-
-.temperatura {
-  display: none;
-  color: #a78bfa;
-  font-size: 25px;
-  margin: 12px 0;
-}
-
-.temperatura small {
-  display: block;
-  color: #a1a1aa;
-  font-size: 10px;
-  margin-top: 4px;
-}
-
-.painel {
-  max-width: 720px;
-  margin: 20px auto 0;
-  padding: 22px;
-  background: rgba(8,15,27,.9);
-  border: 1px solid rgba(167,139,250,.22);
-  border-radius: 14px;
-  text-align: center;
-}
-
-.painel h3 {
-  font-size: 12px;
-  letter-spacing: 1.8px;
-  margin-bottom: 16px;
-  color: #ddd6fe;
-}
-
-.color-picker {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-
-input[type="color"] {
-  width: 48px;
-  height: 38px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-#corNome {
-  color: #a78bfa;
-  font-size: 12px;
-}
-
-.botoes-modos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.modo {
-  background: rgba(112,82,180,.13);
-  color: white;
-  border: 1px solid #34313f;
-  padding: 14px 8px;
-  border-radius: 10px;
-  font-size: 12px;
-}
-
-.modo:hover {
-  border-color: #a78bfa;
-  background: rgba(112,82,180,.24);
-}
-
-.lista-alexa {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-align: left;
-}
-
-.funcao {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(167,139,250,.13);
-  border-radius: 10px;
-}
-
-.funcao > span {
-  font-size: 24px;
-}
-
-.funcao strong {
-  font-size: 13px;
-}
-
-.funcao p {
-  color: #a1a1aa;
-  font-size: 11px;
-  margin-top: 5px;
-  line-height: 1.5;
 }
 
 footer {
@@ -272,18 +91,176 @@ footer {
   font-size: 11px;
 }
 
-@media(max-width: 550px) {
-  .dispositivos {
-    grid-template-columns: 1fr;
-    max-width: 360px;
+/* PROGRAMAÇÃO */
+
+.programacao {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  padding: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(12,35,56,.97),
+    rgba(7,19,32,.97)
+  );
+  border: 1px solid rgba(69,184,255,.30);
+  border-radius: 15px;
+  box-shadow: 0 14px 36px rgba(0,0,0,.25);
+}
+
+.programacao h2 {
+  text-align: center;
+  color: #8bd5ff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.lista-horarios {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.item-horario {
+  display: grid;
+  grid-template-columns: 112px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(69,184,255,.13);
+  border-radius: 10px;
+}
+
+/* HORÁRIOS EM NEON AZUL */
+
+.item-horario .hora {
+  color: #8bd8ff;
+  font-weight: 900;
+  font-size: 17px;
+  white-space: nowrap;
+  text-shadow:
+    0 0 5px #149fff,
+    0 0 10px #149fff,
+    0 0 18px #087dff,
+    0 0 28px rgba(0,145,255,.85);
+  animation: neonAzul 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes neonAzul {
+  from {
+    text-shadow:
+      0 0 4px #149fff,
+      0 0 8px #149fff,
+      0 0 14px #087dff,
+      0 0 22px rgba(0,145,255,.65);
   }
 
-  .intro {
-    padding: 40px 15px 65px;
+  to {
+    text-shadow:
+      0 0 7px #7bd5ff,
+      0 0 14px #149fff,
+      0 0 24px #087dff,
+      0 0 36px rgba(0,145,255,1);
+  }
+}
+
+.item-horario strong {
+  font-size: 12px;
+}
+
+.item-horario small {
+  display: block;
+  color: #9fb5c8;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.item-horario .duracao {
+  color: #b9d9ed;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* INTERVALOS */
+
+.item-horario.intervalo {
+  background: rgba(30,105,155,.15);
+  border-style: dashed;
+}
+
+.item-horario.intervalo .hora {
+  color: #a8dcff;
+}
+
+/* DESTAQUE DA SESSÃO ATUAL */
+
+.item-horario.agora {
+  border-color: #45b8ff;
+  background: rgba(31,139,205,.22);
+  box-shadow: 0 0 0 1px rgba(69,184,255,.15);
+}
+
+.item-horario.concluido {
+  opacity: .58;
+}
+
+/* LEGENDA */
+
+.legenda {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  color: #9fb5c8;
+  font-size: 10px;
+}
+
+.legenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ponto.atual {
+  background: #45b8ff;
+}
+
+.ponto.intervalo {
+  background: #a8dcff;
+}
+
+.ponto.finalizado {
+  background: #60798c;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:550px) {
+  .item-horario {
+    grid-template-columns: 1fr auto;
+    gap: 5px 10px;
   }
 
-  .botoes-modos {
-    grid-template-columns: 1fr;
+  .item-horario .hora {
+    grid-column: 1;
+  }
+
+  .item-horario>div:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .item-horario .duracao {
+    grid-column: 2;
+    grid-row: 1/span 2;
   }
 
   header {
@@ -294,6 +271,10 @@ footer {
   .data-hora {
     text-align: center;
   }
+
+  .intro {
+    padding: 40px 15px 65px;
+  }
 }
 </style>
 </head>
@@ -301,7 +282,7 @@ footer {
 <body>
 
 <header>
-  <div class="logo">SMART <span>LIVING ROOM</span></div>
+  <div class="logo">SALA <span>INTELIGENTE</span></div>
 
   <div class="data-hora">
     <div id="relogio">00:00:00</div>
@@ -310,154 +291,32 @@ footer {
 </header>
 
 <section class="intro">
-  <small>CONFORTO • ENTRETENIMENTO • TECNOLOGIA</small>
-  <h1>Minha Sala Inteligente</h1>
-  <p>Controle seu ambiente em um só lugar.</p>
+  <small>PROJETO • TECNOLOGIA • AUTOMAÇÃO</small>
+  <h1>Sala Inteligente</h1>
 </section>
 
 <main>
 
-  <h2 class="titulo">CONTROLES DA SALA</h2>
+  <section class="programacao">
+    <h2>🕘 HORÁRIOS DAS APRESENTAÇÕES</h2>
 
-  <section class="dispositivos">
+    <div class="lista-horarios" id="listaHorarios"></div>
 
-    <div class="card">
-      <div class="icone">💡</div>
-      <h3>Luz principal</h3>
-      <span class="status" id="luzStatus">Desligada</span>
-      <button class="btn" onclick="alternar('luz')">
-        Ligar / Desligar
-      </button>
-    </div>
+    <div class="legenda">
+      <span>
+        <i class="ponto atual"></i>
+        Em andamento
+      </span>
 
-    <div class="card">
-      <div class="icone">🌈</div>
-      <h3>Fita LED</h3>
-      <span class="status" id="ledStatus">Desligada</span>
-      <button class="btn" onclick="alternar('led')">
-        Ligar / Desligar
-      </button>
-    </div>
+      <span>
+        <i class="ponto intervalo"></i>
+        Intervalo
+      </span>
 
-    <div class="card">
-      <div class="icone">❄️</div>
-      <h3>Ar-condicionado</h3>
-      <span class="status" id="arStatus">Desligado</span>
-
-      <div class="temperatura" id="temperaturaAr">
-        <span id="valorTemperatura">23</span>°C
-        <small>Temperatura configurada</small>
-      </div>
-
-      <button class="btn" onclick="alternar('ar')">
-        Ligar / Desligar
-      </button>
-    </div>
-
-    <div class="card">
-      <div class="icone">📺</div>
-      <h3>TV / Monitor</h3>
-      <span class="status" id="tvStatus">Desligada</span>
-      <button class="btn" onclick="alternar('tv')">
-        Ligar / Desligar
-      </button>
-    </div>
-
-  </section>
-
-  <section class="painel">
-    <h3>🎨 PERSONALIZAR FITA LED</h3>
-
-    <div class="color-picker">
-      <input
-        type="color"
-        id="corLED"
-        value="#36cfff"
-        onchange="alterarCor()"
-      >
-      <span id="corNome">#36cfff</span>
-    </div>
-  </section>
-
-  <section class="painel">
-    <h3>MODOS DA SALA</h3>
-
-    <div class="botoes-modos">
-      <button class="modo" onclick="ativarModo('cinema')">
-        🎬 Cinema
-      </button>
-
-      <button class="modo" onclick="ativarModo('relax')">
-        🌙 Relax
-      </button>
-
-      <button class="modo" onclick="ativarModo('festa')">
-        🎉 Festa
-      </button>
-    </div>
-  </section>
-
-  <section class="painel">
-    <h3>🔊 O QUE A ALEXA PODERÁ FAZER?</h3>
-
-    <div class="lista-alexa">
-
-      <div class="funcao">
-        <span>💡</span>
-        <div>
-          <strong>“Alexa, ligar a luz principal”</strong>
-          <p>Ligar e desligar a iluminação principal da sala.</p>
-        </div>
-      </div>
-
-      <div class="funcao">
-        <span>🌈</span>
-        <div>
-          <strong>“Alexa, ligar a fita LED”</strong>
-          <p>Ligar, desligar e alterar as cores da fita LED.</p>
-        </div>
-      </div>
-
-      <div class="funcao">
-        <span>❄️</span>
-        <div>
-          <strong>“Alexa, ligar o ar-condicionado”</strong>
-          <p>Ligar, desligar e ajustar a temperatura.</p>
-        </div>
-      </div>
-
-      <div class="funcao">
-        <span>📺</span>
-        <div>
-          <strong>“Alexa, ligar a TV”</strong>
-          <p>Acionar rotinas para a TV e o Mi TV Stick, conforme a integração disponível.</p>
-        </div>
-      </div>
-
-      <div class="funcao">
-        <span>🎬</span>
-        <div>
-          <strong>“Alexa, ativar modo Cinema”</strong>
-          <p>Preparar a iluminação e o ar-condicionado para assistir a filmes.</p>
-        </div>
-      </div>
-
-      <div class="funcao">
-        <span>🌙</span>
-        <div>
-          <strong>“Alexa, ativar modo Relaxar”</strong>
-          <p>Criar um ambiente com iluminação suave e climatização.</p>
-        </div>
-      </div>
-
-      <div class="funcao">
-        <span>🎉</span>
-        <div>
-          <strong>“Alexa, ativar modo Festa”</strong>
-          <p>Acionar a iluminação colorida para momentos de diversão.</p>
-        </div>
-      </div>
-
+      <span>
+        <i class="ponto finalizado"></i>
+        Encerrado
+      </span>
     </div>
   </section>
 
@@ -469,21 +328,8 @@ footer {
 
 <script>
 
-const equipamentos = {
-  luz: false,
-  led: false,
-  ar: false,
-  tv: false
-};
-
-const textos = {
-  luz: ["Ligada", "Desligada"],
-  led: ["Ligada", "Desligada"],
-  ar: ["Ligado", "Desligado"],
-  tv: ["Ligada", "Desligada"]
-};
-
 // RELÓGIO E DATA
+
 function atualizarRelogio() {
   const agora = new Date();
 
@@ -502,64 +348,131 @@ function atualizarRelogio() {
 atualizarRelogio();
 setInterval(atualizarRelogio, 1000);
 
-// ATUALIZAR STATUS DOS DISPOSITIVOS
-function atualizarStatus(nome) {
-  const elemento = document.getElementById(nome + "Status");
 
-  elemento.textContent =
-    equipamentos[nome] ? textos[nome][0] : textos[nome][1];
+// PROGRAMAÇÃO DAS SESSÕES
 
-  elemento.classList.toggle("ligado", equipamentos[nome]);
+function minutoParaHora(total) {
+  const h = Math.floor(total / 60);
+  const m = total % 60;
+
+  return String(h).padStart(2, '0') + ':' +
+         String(m).padStart(2, '0');
 }
 
-// LIGAR E DESLIGAR
-function alternar(nome) {
-  equipamentos[nome] = !equipamentos[nome];
 
-  atualizarStatus(nome);
+function montarProgramacao() {
 
-  if (nome === "ar") {
-    document.getElementById("temperaturaAr").style.display =
-      equipamentos.ar ? "block" : "none";
+  const lista = document.getElementById('listaHorarios');
+
+  if (!lista) return;
+
+  let minuto = 9 * 60 + 10;
+  let conteudo = '';
+
+  for (let i = 1; i <= 6; i++) {
+
+    const inicio = minuto;
+    const fim = inicio + 25;
+
+    conteudo += `
+      <div class="item-horario"
+           data-inicio="${inicio}"
+           data-fim="${fim}"
+           data-tipo="sessao">
+
+        <div class="hora">
+          ${minutoParaHora(inicio)} – ${minutoParaHora(fim)}
+        </div>
+
+        <div>
+          <strong>Sessão ${i}</strong>
+          <small>Sala Inteligente</small>
+        </div>
+
+        <div class="duracao">25 min</div>
+
+      </div>
+    `;
+
+    minuto = fim;
+
+
+    // INTERVALOS DE 20 MINUTOS
+    // Após a terceira e a sexta sessão
+
+    if (i === 3 || i === 6) {
+
+      const fimIntervalo = minuto + 20;
+
+      conteudo += `
+        <div class="item-horario intervalo"
+             data-inicio="${minuto}"
+             data-fim="${fimIntervalo}"
+             data-tipo="intervalo">
+
+          <div class="hora">
+            ${minutoParaHora(minuto)} – ${minutoParaHora(fimIntervalo)}
+          </div>
+
+          <div>
+            <strong>Intervalo</strong>
+            <small>Pausa de 20 minutos</small>
+          </div>
+
+          <div class="duracao">20 min</div>
+
+        </div>
+      `;
+
+      minuto = fimIntervalo;
+    }
   }
+
+  lista.innerHTML = conteudo;
+
+  atualizarDestaqueProgramacao();
 }
 
-// ALTERAR COR DA FITA LED
-function alterarCor() {
-  const cor = document.getElementById("corLED").value;
 
-  document.getElementById("corNome").textContent = cor;
+// DESTAQUE AUTOMÁTICO DO HORÁRIO ATUAL
+
+function atualizarDestaqueProgramacao() {
+
+  const agora = new Date();
+
+  const atualMin =
+    agora.getHours() * 60 + agora.getMinutes();
+
+  const itens =
+    document.querySelectorAll('.item-horario');
+
+  itens.forEach(item => {
+
+    const ini = Number(item.dataset.inicio);
+    const fim = Number(item.dataset.fim);
+
+    item.classList.remove('agora', 'concluido');
+
+    if (atualMin >= ini && atualMin < fim) {
+
+      item.classList.add('agora');
+
+    } else if (atualMin >= fim) {
+
+      item.classList.add('concluido');
+
+    }
+
+  });
+
 }
 
-// MODOS DA SALA
-function ativarModo(modo) {
 
-  if (modo === "cinema") {
-    equipamentos.luz = false;
-    equipamentos.led = true;
-    equipamentos.ar = true;
-    equipamentos.tv = true;
-  }
+// INICIALIZAÇÃO
 
-  else if (modo === "relax") {
-    equipamentos.luz = false;
-    equipamentos.led = true;
-    equipamentos.ar = true;
-    equipamentos.tv = false;
-  }
+montarProgramacao();
 
-  else if (modo === "festa") {
-    equipamentos.luz = false;
-    equipamentos.led = true;
-    equipamentos.ar = false;
-    equipamentos.tv = false;
-  }
-
-  Object.keys(equipamentos).forEach(atualizarStatus);
-
-  document.getElementById("temperaturaAr").style.display =
-    equipamentos.ar ? "block" : "none";
-}
+setInterval(atualizarDestaqueProgramacao, 30000);
 
 </script>
 
